@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Edit Student</title>
+</head>
+<body>
+    <video autoplay muted loop id="bg-video">
+    <source src="videos/bg.mp4" type="video/mp4">
+</video>
+    <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="addstd.html">Add Student</a>
+            <a href="viewstd.html">View Students</a>
+            <a href="editstd.html">Edit Student</a>
+            <a href="logout.html">Logout</a>
+        
+    </nav>
+    <form action="viewstd.html">
+        <h2>Edit Student Details</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="John Doe" required>
+        <br><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" value="20" required>
+        <br><br>
+        <label for="grade">Grade:</label>
+        <input type="text" id="grade" name="grade" value="A" required>
+        <br><br>
+        <input type="submit" value="Update Student">
+    </form>
+    
+</body>
+</html>

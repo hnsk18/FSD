@@ -1,0 +1,163 @@
+#mainHeader {
+    color: rgb(101, 213, 15);
+    text-align: center;
+}
+
+.cta-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.eventCard {
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2 {
+    color: darkgreen;
+}
+
+#mainHeader {
+    font-size: 40px;
+}
+
+.eventCard {
+    border: 2px solid gray;
+    padding: 15px;
+}
+
+h3, p {
+    font-family: Arial;
+    color: #333;
+}
+body {
+    background-color: rgba(240,240,240,0.9);
+    background-image: url('background.jpg');
+    background-size: cover;
+}
+
+h2 {
+    color: #ffffff;
+    background: linear-gradient(to right, blue, purple);
+    padding: 10px;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.description {
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 500;
+    text-align: justify;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    line-height: 1.8;
+}
+a:link {
+    color: blue;
+}
+
+a:hover {
+    color: red;
+}
+
+a:active {
+    color: green;
+}
+
+a:visited {
+    color: purple;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav li {
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+th {
+    background-color: #007BFF;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.eventCard {
+    border: 2px solid black;
+    padding: 20px;
+    margin: 20px;
+}
+
+input:focus {
+    outline: 3px solid blue;
+}
+
+.hiddenBox {
+    visibility: hidden;
+}
+
+.noneBox {
+    display: none;
+}
+.newsArticle {
+    column-count: 2;
+    column-gap: 30px;
+    column-rule: 1px solid gray;
+}
+
+.container {
+    width: 90%;
+}
+
+img {
+    width: 50vw;
+    height: auto;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+
+    nav li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    img {
+        width: 90%;
+    }
+}

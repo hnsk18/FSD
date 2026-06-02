@@ -1,0 +1,372 @@
+mysql> use event_management;
+Database changed
+mysql> SELECT u.full_name,e.title,e.city,e.start_date
+    -> FROM users u
+    -> JOIN registrations r ON u.user_id=r.user_id
+    -> JOIN events e ON r.event_id=e.event_id
+    -> WHERE e.status='upcoming'
+    -> AND u.city=e.city
+    -> ORDER BY e.start_date;
++---------------+-------------------------------+-------------+---------------------+
+| full_name     | title                         | city        | start_date          |
++---------------+-------------------------------+-------------+---------------------+
+| Alice Johnson | Tech Innovators Meetup        | New York    | 2025-06-10 10:00:00 |
+| Ethan Hunt    | Frontend Development Bootcamp | Los Angeles | 2025-07-01 10:00:00 |
++---------------+-------------------------------+-------------+---------------------+
+2 rows in set (0.11 sec)
+
+mysql> SELECT e.title,AVG(f.rating) AS avg_rating
+    -> FROM events e
+    -> JOIN feedback f ON e.event_id=f.event_id
+    -> GROUP BY e.event_id,e.title
+    -> HAVING COUNT(f.feedback_id)>=10
+    -> ORDER BY avg_rating DESC;
+Empty set (0.17 sec)
+
+mysql> SELECT e.title,AVG(f.rating) AS avg_rating
+    -> FROM events e
+    -> JOIN feedback f ON e.event_id=f.event_id
+    -> GROUP BY e.event_id,e.title
+    -> HAVING COUNT(f.feedback_id)>=1
+    -> ORDER BY avg_rating DESC;
++------------------------+------------+
+| title                  | avg_rating |
++------------------------+------------+
+| AI & ML Conference     |     4.5000 |
+| Tech Innovators Meetup |     3.0000 |
++------------------------+------------+
+2 rows in set (0.04 sec)
+
+mysql> show tables;
++----------------------------+
+| Tables_in_event_management |
++----------------------------+
+| events                     |
+| feedback                   |
+| registrations              |
+| resources                  |
+| sessions                   |
+| users                      |
++----------------------------+
+6 rows in set (0.03 sec)
+
+mysql> SELECT *
+    -> FROM users
+    -> WHERE user_id NOT IN (
+    ->     SELECT user_id
+    ->     FROM registrations
+    ->     WHERE registration_date >= CURDATE()-INTERVAL 90 DAY
+    -> );
++---------+---------------+---------------------+-------------+-------------------+
+| user_id | full_name     | email               | city        | registration_date |
++---------+---------------+---------------------+-------------+-------------------+
+|       1 | Alice Johnson | alice@example.com   | New York    | 2024-12-01        |
+|       2 | Bob Smith     | bob@example.com     | Los Angeles | 2024-12-05        |
+|       3 | Charlie Lee   | charlie@example.com | Chicago     | 2024-12-10        |
+|       4 | Diana King    | diana@example.com   | New York    | 2025-01-15        |
+|       5 | Ethan Hunt    | ethan@example.com   | Los Angeles | 2025-02-01        |
++---------+---------------+---------------------+-------------+-------------------+
+5 rows in set (0.05 sec)
+
+mysql> SELECT e.title,COUNT(s.session_id) AS total_sessions
+    -> FROM events e
+    -> JOIN sessions s ON e.event_id=s.event_id
+    -> WHERE TIME(s.start_time) BETWEEN '10:00:00' AND '12:00:00'
+    -> GROUP BY e.event_id,e.title;
++-------------------------------+----------------+
+| title                         | total_sessions |
++-------------------------------+----------------+
+| Tech Innovators Meetup        |              2 |
+| Frontend Development Bootcamp |              1 |
++-------------------------------+----------------+
+2 rows in set (0.05 sec)
+
+mysql> SELECT u.city,COUNT(DISTINCT r.registration_id) AS total_registrations
+    -> FROM users u
+    -> JOIN registrations r ON u.user_id=r.user_id
+    -> GROUP BY u.city
+    -> ORDER BY total_registrations DESC
+    -> LIMIT 5;
++-------------+---------------------+
+| city        | total_registrations |
++-------------+---------------------+
+| Los Angeles |                   2 |
+| New York    |                   2 |
+| Chicago     |                   1 |
++-------------+---------------------+
+3 rows in set (0.05 sec)
+
+mysql> SELECT e.title,
+    -> SUM(resource_type='pdf') AS pdf_count,
+    -> SUM(resource_type='image') AS image_count,
+    -> SUM(resource_type='link') AS link_count
+    -> FROM events e
+    -> LEFT JOIN resources r ON e.event_id=r.event_id
+    -> GROUP BY e.event_id,e.title;
++-------------------------------+-----------+-------------+------------+
+| title                         | pdf_count | image_count | link_count |
++-------------------------------+-----------+-------------+------------+
+| Tech Innovators Meetup        |         1 |           0 |          0 |
+| AI & ML Conference            |         0 |           1 |          0 |
+| Frontend Development Bootcamp |         0 |           0 |          1 |
++-------------------------------+-----------+-------------+------------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT u.full_name,e.title,f.comments,f.rating
+    -> FROM feedback f
+    -> JOIN users u ON f.user_id=u.user_id
+    -> JOIN events e ON f.event_id=e.event_id
+    -> WHERE f.rating<3;
+Empty set (0.00 sec)
+
+mysql> SELECT e.title,COUNT(s.session_id) AS total_sessions
+    -> FROM events e
+    -> LEFT JOIN sessions s ON e.event_id=s.event_id
+    -> WHERE e.status='upcoming'
+    -> GROUP BY e.event_id,e.title;
++-------------------------------+----------------+
+| title                         | total_sessions |
++-------------------------------+----------------+
+| Tech Innovators Meetup        |              2 |
+| Frontend Development Bootcamp |              1 |
++-------------------------------+----------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT u.full_name,
+    -> COUNT(e.event_id) AS total_events,
+    -> SUM(e.status='upcoming') AS upcoming,
+    -> SUM(e.status='completed') AS completed,
+    -> SUM(e.status='cancelled') AS cancelled
+    -> FROM users u
+    -> LEFT JOIN events e ON u.user_id=e.organizer_id
+    -> GROUP BY u.user_id,u.full_name;
++---------------+--------------+----------+-----------+-----------+
+| full_name     | total_events | upcoming | completed | cancelled |
++---------------+--------------+----------+-----------+-----------+
+| Alice Johnson |            1 |        1 |         0 |         0 |
+| Bob Smith     |            1 |        1 |         0 |         0 |
+| Charlie Lee   |            1 |        0 |         1 |         0 |
+| Diana King    |            0 |     NULL |      NULL |      NULL |
+| Ethan Hunt    |            0 |     NULL |      NULL |      NULL |
++---------------+--------------+----------+-----------+-----------+
+5 rows in set (0.01 sec)
+
+mysql> SELECT e.title
+    -> FROM events e
+    -> JOIN registrations r ON e.event_id=r.event_id
+    -> LEFT JOIN feedback f ON e.event_id=f.event_id
+    -> WHERE f.feedback_id IS NULL
+    -> GROUP BY e.event_id,e.title;
++-------------------------------+
+| title                         |
++-------------------------------+
+| Frontend Development Bootcamp |
++-------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT registration_date,
+    -> COUNT(user_id) AS total_users
+    -> FROM users
+    -> WHERE registration_date >= CURDATE()-INTERVAL 7 DAY
+    -> GROUP BY registration_date;
+Empty set (0.00 sec)
+
+mysql> SELECT registration_date,
+    -> COUNT(user_id) AS total_users
+    -> FROM users
+    -> WHERE registration_date >= CURDATE()-INTERVAL 100 DAY
+    -> GROUP BY registration_date;
+Empty set (0.00 sec)
+
+mysql> SELECT registration_date,
+    -> COUNT(user_id) AS total_users
+    -> FROM users
+    -> WHERE registration_date >= CURDATE()-INTERVAL 200 DAY
+    -> GROUP BY registration_date;
+Empty set (0.00 sec)
+
+mysql> SELECT registration_date,
+    -> COUNT(user_id) AS total_users
+    -> FROM users
+    -> WHERE registration_date >= CURDATE()-INTERVAL 300 DAY
+    -> GROUP BY registration_date;
+Empty set (0.00 sec)
+
+mysql> 
+mysql> SELECT registration_date,
+    -> COUNT(user_id) AS total_users
+    -> FROM users
+    -> WHERE registration_date >= CURDATE()-INTERVAL 500 DAY
+    -> GROUP BY registration_date;
++-------------------+-------------+
+| registration_date | total_users |
++-------------------+-------------+
+| 2025-02-01        |           1 |
++-------------------+-------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT e.title,COUNT(s.session_id) AS total_sessions
+    -> FROM events e
+    -> JOIN sessions s ON e.event_id=s.event_id
+    -> GROUP BY e.event_id,e.title
+    -> HAVING COUNT(s.session_id)=(
+    ->     SELECT MAX(session_count)
+    ->     FROM(
+    ->         SELECT COUNT(*) AS session_count
+    ->         FROM sessions
+    ->         GROUP BY event_id
+    ->     ) t
+    -> );
++------------------------+----------------+
+| title                  | total_sessions |
++------------------------+----------------+
+| Tech Innovators Meetup |              2 |
++------------------------+----------------+
+1 row in set (0.05 sec)
+
+mysql> SELECT e.city,AVG(f.rating) AS avg_rating
+    -> FROM events e
+    -> JOIN feedback f ON e.event_id=f.event_id
+    -> GROUP BY e.city;
++----------+------------+
+| city     | avg_rating |
++----------+------------+
+| Chicago  |     4.5000 |
+| New York |     3.0000 |
++----------+------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT e.title,COUNT(r.registration_id) AS total_registrations
+    -> FROM events e
+    -> JOIN registrations r ON e.event_id=r.event_id
+    -> GROUP BY e.event_id,e.title
+    -> ORDER BY total_registrations DESC
+    -> LIMIT 3;
++-------------------------------+---------------------+
+| title                         | total_registrations |
++-------------------------------+---------------------+
+| Tech Innovators Meetup        |                   2 |
+| AI & ML Conference            |                   2 |
+| Frontend Development Bootcamp |                   1 |
++-------------------------------+---------------------+
+3 rows in set (0.04 sec)
+
+mysql> SELECT s1.event_id,s1.title,s2.title
+    -> FROM sessions s1
+    -> JOIN sessions s2
+    -> ON s1.event_id=s2.event_id
+    -> AND s1.session_id<s2.session_id
+    -> AND s1.start_time<s2.end_time
+    -> AND s1.end_time>s2.start_time;
+Empty set (0.05 sec)
+
+mysql> SELECT *
+    -> FROM users
+    -> WHERE registration_date >= CURDATE()-INTERVAL 30 DAY
+    -> AND user_id NOT IN (
+    ->     SELECT user_id
+    ->     FROM registrations
+    -> );
+Empty set (0.00 sec)
+
+mysql> SELECT speaker_name,COUNT(session_id) AS total_sessions
+    -> FROM sessions
+    -> GROUP BY speaker_name
+    -> HAVING COUNT(session_id)>1;
+Empty set (0.00 sec)
+
+mysql> SELECT e.title
+    -> FROM events e
+    -> LEFT JOIN resources r ON e.event_id=r.event_id
+    -> WHERE r.resource_id IS NULL;
+Empty set (0.00 sec)
+
+mysql> SELECT e.title,
+    -> COUNT(DISTINCT r.registration_id) AS total_registrations,
+    -> AVG(f.rating) AS avg_rating
+    -> FROM events e
+    -> LEFT JOIN registrations r ON e.event_id=r.event_id
+    -> LEFT JOIN feedback f ON e.event_id=f.event_id
+    -> WHERE e.status='completed'
+    -> GROUP BY e.event_id,e.title;
++--------------------+---------------------+------------+
+| title              | total_registrations | avg_rating |
++--------------------+---------------------+------------+
+| AI & ML Conference |                   2 |     4.5000 |
++--------------------+---------------------+------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT u.full_name,
+    -> COUNT(DISTINCT r.event_id) AS attended_events,
+    -> COUNT(DISTINCT f.feedback_id) AS feedbacks_submitted
+    -> FROM users u
+    -> LEFT JOIN registrations r ON u.user_id=r.user_id
+    -> LEFT JOIN feedback f ON u.user_id=f.user_id
+    -> GROUP BY u.user_id,u.full_name;
++---------------+-----------------+---------------------+
+| full_name     | attended_events | feedbacks_submitted |
++---------------+-----------------+---------------------+
+| Alice Johnson |               1 |                   0 |
+| Bob Smith     |               1 |                   1 |
+| Charlie Lee   |               1 |                   1 |
+| Diana King    |               1 |                   1 |
+| Ethan Hunt    |               1 |                   0 |
++---------------+-----------------+---------------------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT u.full_name,COUNT(f.feedback_id) AS total_feedbacks
+    -> FROM users u
+    -> JOIN feedback f ON u.user_id=f.user_id
+    -> GROUP BY u.user_id,u.full_name
+    -> ORDER BY total_feedbacks DESC
+    -> LIMIT 5;
++-------------+-----------------+
+| full_name   | total_feedbacks |
++-------------+-----------------+
+| Bob Smith   |               1 |
+| Charlie Lee |               1 |
+| Diana King  |               1 |
++-------------+-----------------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT user_id,event_id,COUNT(*) AS duplicate_count
+    -> FROM registrations
+    -> GROUP BY user_id,event_id
+    -> HAVING COUNT(*)>1;
+Empty set (0.04 sec)
+
+mysql> SELECT MONTH(registration_date) AS month,
+    -> YEAR(registration_date) AS year,
+    -> COUNT(*) AS total_registrations
+    -> FROM registrations
+    -> WHERE registration_date >= CURDATE()-INTERVAL 12 MONTH
+    -> GROUP BY YEAR(registration_date),MONTH(registration_date)
+    -> ORDER BY year,month;
++-------+------+---------------------+
+| month | year | total_registrations |
++-------+------+---------------------+
+|     6 | 2025 |                   1 |
++-------+------+---------------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT e.title,
+    -> AVG(TIMESTAMPDIFF(MINUTE,s.start_time,s.end_time)) AS avg_duration_minutes
+    -> FROM events e
+    -> JOIN sessions s ON e.event_id=s.event_id
+    -> GROUP BY e.event_id,e.title;
++-------------------------------+----------------------+
+| title                         | avg_duration_minutes |
++-------------------------------+----------------------+
+| Tech Innovators Meetup        |              67.5000 |
+| AI & ML Conference            |              90.0000 |
+| Frontend Development Bootcamp |             120.0000 |
++-------------------------------+----------------------+
+3 rows in set (0.04 sec)
+
+mysql> SELECT e.title
+    -> FROM events e
+    -> LEFT JOIN sessions s ON e.event_id=s.event_id
+    -> WHERE s.session_id IS NULL;
+Empty set (0.00 sec)
+
+mysql> notee

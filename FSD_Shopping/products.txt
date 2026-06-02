@@ -1,0 +1,10 @@
+sno product_name    price   
+1   Laptop          10000
+2   Smartphone      70000
+3   Tablet          80000
+4   Headphones      90000
+5   Smartwatch      60000
+6   Camera          50000
+7   Printer         40000
+8   Headphones      1000
+7   Printer         40000

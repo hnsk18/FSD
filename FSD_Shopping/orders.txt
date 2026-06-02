@@ -1,0 +1,13 @@
+sno   product_name    quantity    address       total
+1     Laptop          5           Hyderabad     50000
+2     Smartphone      2           Chennai       140000
+3     Tablet          1           Bangalore     80000
+4     Headphones      3           Mumbai        270000
+5     Smartwatch      4           Pune          240000
+6     Camera          2           Delhi         100000
+7     Printer         1           Kolkata       40000
+<<<<<<< HEAD
+8     Headphones      3            vizag       10000
+=======
+8     Headphones      3            vizag       1000
+>>>>>>> bc2f6a4876c548359bc0d580aa910d6aa63de3a6

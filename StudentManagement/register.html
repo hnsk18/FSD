@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Register - Student Management System</title>
+</head>
+<body>
+    <video autoplay muted loop id="bg-video">
+    <source src="videos/bg.mp4" type="video/mp4">
+    </video> 
+    <nav>    
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>        
+    </nav>
+    <form id="register-form" action="login.html">
+        <h2>Register</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+        <label for="roll_number">Roll Number:</label>
+        <input type="text" id="roll_number" name="roll_number" required>
+        <br><br>
+        <label for="cgpa">CGPA:</label>
+        <input type="text" id="cgpa" name="cgpa" required>
+        <br><br>
+        <label for="branch">Branch:</label> 
+        <br>
+        <select id="branch" name="branch" required>
+            <option value="">Select Branch</option>
+            <option value="cse">CSE</option>
+            <option value="ece">ECE</option>
+            <option value="csd">CSD</option>
+            <option value="csm">CSM</option>
+            <option value="csc">CSC</option>
+        </select>
+        <br><br>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required>
+        <br><br>
+        <input type="submit" id="register" value="Register">
+        <p id="reg-para">Already have an account? <a href="login.html">Login here</a>.</p>
+    </form>
+    <hr>
+</body>
+</html>
