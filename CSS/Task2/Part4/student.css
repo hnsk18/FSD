@@ -1,0 +1,62 @@
+
+
+nav {
+    background-color: #afafaf;
+    padding: 10px 20px;
+    display: flex;
+}
+nav img {
+    border-radius: 20%;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+nav a {
+    color: rgb(54, 54, 54);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 25px;
+    transition: color 0.3s ease;
+}
+nav a:hover {
+    color: #ffcc00;
+}
+
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+#welcome {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgb(0, 0, 0);
+    animation: fadeIn 2s ease-in-out;
+}
+#welcome h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+#welcome h3 {
+    font-size: 24px;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@media (max-width: 768px) {
+    #welcome h1 {
+        font-size: 32px;
+    }
+    #welcome h3 {
+        font-size: 18px;
+    }
+}
