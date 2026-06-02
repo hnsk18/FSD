@@ -1,0 +1,128 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #a0f0d5;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.animations {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.card {
+  background-color: hsl(0, 100%, 100%);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+}
+
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.load {
+  width: 70px;
+  height: 70px;
+  border: 5px solid #cccccc;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.baller {
+  width: 100%;
+  height: 60px;
+  position: relative;
+  background-color: #eee;
+  border-radius: 8px;
+}
+
+.ball {
+  width: 40px;
+  height: 40px;
+  background-color: #ff5722;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  animation: moveBall 3s ease-in-out infinite;
+}
+
+@keyframes moveBall {
+  0%, 100% { left: 0%; }
+  50% { left: calc(100% - 40px); }
+}
+
+
+.welcome {
+  padding-top:9%;
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  gap: 40px;
+  color: #2c3e50;
+ }
+
+.welcome span {
+  display: inline-block;
+  animation: bounce 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-40px); }
+}
+
+
+.traffic-light {
+  background-color: #222;
+  padding: 15px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 50px;
+}
+
+.light {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #444;
+  animation: traffic 3s infinite;
+}
+
+.light.red { animation-delay: 0s; --active-color: #dd1f1f; }
+.light.yellow { animation-delay: 1s; --active-color: #ffcc00; }
+.light.green { animation-delay: 2s; --active-color: #26cc26; }
+
+@keyframes traffic {
+  0%, 33.33% { 
+    background-color: var(--active-color); 
+    box-shadow: 0 0 20px var(--active-color);
+  }
+  33.34%, 100% { 
+    background-color: #444; 
+    box-shadow: none;
+  }
+}

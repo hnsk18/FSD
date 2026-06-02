@@ -1,0 +1,41 @@
+body{
+    display: flex;
+    flex-wrap: wrap;
+}
+.product-card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin: 40px auto;
+    transition: transform 0.3s ease;
+}
+img {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(0.9);
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px ;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #218838;
+}
+@media (max-width: 600px) {
+    .product-card {
+        width: 70%;
+
+    }
+}

@@ -1,0 +1,44 @@
+body{
+    background: #f0b90698;
+}
+ul{
+    list-style: none;
+    padding: 40px;
+}
+.dashboard{
+	display: grid;
+	grid-template-columns: 20% 1fr;
+	gap: 10px;
+	
+}
+
+.sidebar{
+    text-decoration: none;
+    color: #5d17ff;
+	background: #ffff76;
+	border-radius: 8px;
+	padding: 16px;
+	min-height: 100vh; 
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.content{
+	text-decoration: none;
+    color: #5d17ff;
+	background: #ffff76;
+	border-radius: 8px;
+	padding: 50px;
+}
+
+@media (max-width: 767px){
+	.dashboard{
+		grid-template-columns: 1fr;
+		padding: 12px;
+        
+	}
+	.sidebar{
+		display: none;
+	}
+}
+
