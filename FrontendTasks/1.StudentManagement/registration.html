@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration - College Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand fs-4 fw-bold" href="home.html">
+                <i class="fas fa-graduation-cap text-danger me-2"></i>
+                CVR
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bold" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-bold" href="#" id="coursesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Courses
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="coursesDropdown">
+                            <li><a class="dropdown-item" href="#">Engineering</a></li>
+                            <li><a class="dropdown-item" href="#">Business</a></li>
+                            <li><a class="dropdown-item" href="#">Science</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">View All Courses</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <button id="themeToggleBtn" class="btn btn-outline-secondary btn-sm fw-bold" type="button">
+                            <i class="fas fa-moon me-2"></i>Dark
+                        </button>
+                    </li>
+                    <li class="nav-item active ms-2">
+                        <a href="login.html" class="btn btn-sm btn-danger text-white fw-bold">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Registration Form Section -->
+    <section class="py-5 bg-body min-vh-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <div class="card border-0 shadow-lg rounded-4">
+                        <!-- Form Header -->
+                        <div class="card-header bg-primary text-white py-5 text-center rounded-top-4">
+                            <h2 class="mb-2 fw-bold fs-3">
+                                <i class="fas fa-user-plus me-2"></i>Student Registration Form
+                            </h2>
+                            <p class="text-white-50 mb-0">Join our college community today</p>
+                        </div>
+
+                        <!-- Form Body -->
+                        <div class="card-body p-5">
+                            <form id="registrationForm">
+                                <!-- Row 1: Full Name & Roll Number -->
+                                <div class="row g-3 mb-3">
+                                    <div class="col-md-6">
+                                        <label for="fullName" class="form-label fw-bold text-dark">
+                                            <i class="fas fa-user text-primary me-2"></i>Full Name
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <input type="text" class="form-control form-control-lg border-2" id="fullName"
+                                            placeholder="Enter your full name" pattern="[a-zA-Z\s]{3,50}" minlength="3" maxlength="50" required>
+                                        <div class="invalid-feedback">Full name must contain letters only (3-50 characters).</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="rollNumber" class="form-label fw-bold text-dark">
+                                            <i class="fas fa-id-card text-primary me-2"></i>Roll Number
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <input type="text" class="form-control form-control-lg border-2" id="rollNumber"
+                                            placeholder="e.g., CS001" minlength="3" required>
+                                        <div class="invalid-feedback">Roll number must be at least 3 characters.</div>
+                                    </div>
+                                </div>
+
+                                <!-- Row 2: Email & Mobile -->
+                                <div class="row g-3 mb-3">
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label fw-bold text-dark">
+                                            <i class="fas fa-envelope text-primary me-2"></i>Email Address
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="input-group input-group-lg">
+                                            <span class="input-group-text bg-light border-2">
+                                                <i class="fas fa-at text-primary"></i>
+                                            </span>
+                                            <input type="email" class="form-control border-2" id="email"
+                                                placeholder="student@college.com" required>
+                                        </div>
+                                        <div class="invalid-feedback d-block">Valid email is required.</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="mobile" class="form-label fw-bold text-dark">
+                                            <i class="fas fa-phone text-primary me-2"></i>Mobile Number
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="input-group input-group-lg">
+                                            <span class="input-group-text bg-light border-2">
+                                                <i class="fas fa-phone-alt text-primary"></i>
+                                            </span>
+                                            <input type="tel" class="form-control border-2" id="mobile"
+                                                placeholder="10-digit number" pattern="\d{10}" minlength="10" maxlength="10" required>
+                                        </div>
+                                        <div class="invalid-feedback d-block">Mobile must be exactly 10 digits.</div>
+                                    </div>
+                                </div>
+
+                                <!-- Row 3: Gender & Branch -->
+                                <div class="row g-3 mb-3">
+                                    <div class="col-md-6">
+                                        <label for="gender" class="form-label fw-bold text-dark">
+                                            <i class="fas fa-venus-mars text-primary me-2"></i>Gender
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <select class="form-select form-select-lg border-2" id="gender" required>
+                                            <option value="">-- Select Gender --</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                        <div class="invalid-feedback">Please select a gender.</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="branch" class="form-label fw-bold text-dark">
+                                            <i class="fas fa-code-branch text-primary me-2"></i>Branch
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <select class="form-select form-select-lg border-2" id="branch" required>
+                                            <option value="">-- Select Branch --</option>
+                                            <option value="Computer Science">Computer Science</option>
+                                            <option value="Information Technology">Information Technology</option>
+                                            <option value="Electronics">Electronics</option>
+                                            <option value="Mechanical">Mechanical</option>
+                                            <option value="Civil">Civil</option>
+                                            <option value="Business">Business Administration</option>
+                                        </select>
+                                        <div class="invalid-feedback">Please select a branch.</div>
+                                    </div>
+                                </div>
+
+                                <!-- Row 4: Date of Birth & Photo -->
+                                <div class="row g-3 mb-3">
+                                    <div class="col-md-6">
+                                        <label for="dob" class="form-label fw-bold text-dark">
+                                            <i class="fas fa-calendar-alt text-primary me-2"></i>Date of Birth
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <input type="date" class="form-control form-control-lg border-2" id="dob" min="1946-06-05" max="2010-06-05" required>
+                                        <div class="invalid-feedback">Date of birth required (Age 16-80).</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="photo" class="form-label fw-bold text-dark">
+                                            <i class="fas fa-image text-primary me-2"></i>Upload Photo
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <input type="file" class="form-control form-control-lg border-2" id="photo"
+                                            accept="image/*" required>
+                                        <small class="text-muted d-block mt-2">
+                                            <i class="fas fa-info-circle me-1"></i>Max: 2MB (JPG, PNG)
+                                        </small>
+                                        <div class="invalid-feedback d-block">Photo is required.</div>
+                                    </div>
+                                </div>
+
+                                <!-- Row 5: Address -->
+                                <div class="mb-3">
+                                    <label for="address" class="form-label fw-bold text-dark">
+                                        <i class="fas fa-map-marker-alt text-primary me-2"></i>Address
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <textarea class="form-control form-control-lg border-2" id="address" rows="3"
+                                        placeholder="Enter your full address" minlength="10" required></textarea>
+                                    <div class="invalid-feedback">Address is required.</div>
+                                </div>
+
+                                <!-- Terms and Conditions -->
+                                <div class="mb-4 p-3 bg-light rounded-3 border border-3 border-danger">
+                                    <div class="form-check">
+                                        <input class="form-check-input form-check-input-lg" type="checkbox"
+                                            id="terms" required>
+                                        <label class="form-check-label fw-bold text-dark ms-2" for="terms">
+                                            I agree to the
+                                            <a href="#" class="text-danger text-decoration-none fw-bold">Terms and Conditions</a>
+                                            and
+                                            <a href="#" class="text-danger text-decoration-none fw-bold">Privacy Policy</a>
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="invalid-feedback d-block">You must agree to the terms.</div>
+                                    </div>
+                                </div>
+
+                                <!-- Buttons -->
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                                    <button type="submit" class="btn btn-primary btn-lg fw-bold px-5">
+                                        <i class="fas fa-check-circle me-2"></i>Submit
+                                    </button>
+                                    <button type="reset" class="btn btn-outline-secondary btn-lg fw-bold px-5">
+                                        <i class="fas fa-redo me-2"></i>Clear
+                                    </button>
+                                    <a href="home.html" class="btn btn-outline-danger btn-lg fw-bold px-5">
+                                        <i class="fas fa-arrow-left me-2"></i>Back
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Form Footer -->
+                        <div class="card-footer bg-light py-3 text-center rounded-bottom-4 border-0">
+                            <small class="text-muted">
+                                <i class="fas fa-shield-alt me-1"></i>Your information is secure and confidential.
+                            </small>
+                        </div>
+                    </div>
+
+                    <!-- Success Message -->
+                    <div id="successMessage" class="alert alert-success alert-dismissible fade mt-4 d-none" role="alert">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <strong>Success!</strong> Your registration has been submitted successfully.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="text-center text-muted">
+                <p class="mb-0">&copy; 2024 College Management System. All Rights Reserved. | 
+                    <a href="#" class="text-info text-decoration-none">Privacy Policy</a> | 
+                    <a href="#" class="text-info text-decoration-none">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const themeKey = 'bs-theme';
+            const toggle = document.getElementById('themeToggleBtn');
+            const current = localStorage.getItem(themeKey) === 'dark' ? 'dark' : 'light';
+            const setTheme = mode => {
+                document.documentElement.setAttribute('data-bs-theme', mode);
+                if (toggle) {
+                    toggle.innerHTML = mode === 'dark'
+                        ? '<i class="fas fa-sun me-2"></i>Light'
+                        : '<i class="fas fa-moon me-2"></i>Dark';
+                }
+                localStorage.setItem(themeKey, mode);
+            };
+            setTheme(current);
+            if (toggle) {
+                toggle.addEventListener('click', () => setTheme(document.documentElement.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark'));
+            }
+        })();
+    </script>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

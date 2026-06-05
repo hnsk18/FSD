@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Register - Training Institute</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Training Institute</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"> <span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-2"><a class="btn btn-sm btn-outline-light" href="login.html">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container py-5">
+  <h1 class="h4 mb-4">Course Registration</h1>
+
+  <div id="successAlert" class="alert alert-success d-none" role="alert">
+    Registration submitted successfully. We will contact you soon.
+  </div>
+
+  <form id="regForm" class="card p-4 border-0 shadow-sm">
+    <div class="row g-3">
+      <div class="col-md-6">
+        <label class="form-label">Student Name</label>
+        <input type="text" id="name" class="form-control" required>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Email</label>
+        <input type="email" id="email" class="form-control" required>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Mobile Number</label>
+        <input type="tel" id="mobile" class="form-control" required>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Gender</label>
+        <select id="gender" class="form-select" required>
+          <option value="">Choose...</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Course Selection</label>
+        <select id="course" class="form-select">
+          <option>Web Development</option>
+          <option>Python Programming</option>
+          <option>Data Science</option>
+          <option>AI & Machine Learning</option>
+          <option>Java Programming</option>
+          <option>Cloud Computing</option>
+        </select>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Qualification</label>
+        <input type="text" id="qualification" class="form-control">
+      </div>
+
+      <div class="col-12">
+        <label class="form-label">Address</label>
+        <textarea id="address" class="form-control" rows="3"></textarea>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Upload Resume</label>
+        <input type="file" id="resume" class="form-control">
+      </div>
+
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="terms" required>
+          <label class="form-check-label">I agree to the Terms & Conditions</label>
+        </div>
+      </div>
+
+      <div class="col-12 d-flex justify-content-between">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="courses.html" class="btn btn-outline-secondary">Back to Courses</a>
+      </div>
+    </div>
+  </form>
+</main>
+
+<footer class="bg-dark text-white py-4">
+  <div class="container text-center">&copy; 2024 Training Institute</div>
+</footer>
+
+<script>
+document.getElementById('regForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  // simple validation done by browser; show success alert
+  document.getElementById('successAlert').classList.remove('d-none');
+  this.reset();
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
