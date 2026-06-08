@@ -14,60 +14,25 @@
             <a href="dashboard.html">Dashboard</a>
             <a href="addstd.html">Add Student</a>
             <a href="viewstd.html">View Students</a>
+            <a href="profile.html">Profile</a>
             <a href="editstd.html">Edit Student</a>
             <a href="logout.html">Logout</a>
-        
+    
     </nav>
     <h2>Students List</h2>
-    <table  border="1">
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Grade</th>
-            <th></th>
-            <th></th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>John Doe</td>
-            <td>20</td>
-            <td>A</td>
-            <td><a href="editstd.html">Edit</a></td>
-            <td><a href="#">Delete</a></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Jane Smith</td>
-            <td>22</td>
-            <td>B</td>
-            <td><a href="editstd.html">Edit</a></td>
-            <td><a href="#">Delete</a></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Emily Johnson</td>
-            <td>19</td>
-            <td>A</td>
-            <td><a href="editstd.html">Edit</a></td>
-            <td><a href="#">Delete</a></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>Michael Brown</td>
-            <td>21</td>
-            <td>B</td>
-            <td><a href="editstd.html">Edit</a></td>
-            <td><a href="#">Delete</a></td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>Sarah Davis</td>
-            <td>20</td>
-            <td>A</td>
-            <td><a href="editstd.html">Edit</a></td>
-            <td><a href="#">Delete</a></td>
-        </tr>
+    <p id="student-message" aria-live="polite"></p>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Roll No</th>
+                <th>Age</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody id="students-table-body"></tbody>
     </table>
+    <script src="script.js"></script>
 </body>
 </html>

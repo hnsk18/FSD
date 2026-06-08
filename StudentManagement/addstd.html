@@ -9,22 +9,45 @@
 <body>
     <video autoplay muted loop id="bg-video">
     <source src="videos/bg.mp4" type="video/mp4">
-</video>
+    </video>
     <nav>
             <a href="dashboard.html">Dashboard</a>
             <a href="addstd.html">Add Student</a>
             <a href="viewstd.html">View Students</a>
+            <a href="profile.html">Profile</a>
             <a href="editstd.html">Edit Student</a>
             <a href="logout.html">Logout</a>
         
     </nav>
-    <form action="viewstd.html">
+    <form id="add-student-form" action="viewstd.html">
         <h2>Add New Student</h2>
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
         <br><br>
-        <label for="name">Roll no:</label>
-        <input type="text" id="name" name="name" required>
+        <label for="roll_number">Roll no:</label>
+        <input type="text" id="roll_number" name="roll_number" required>
+        <br><br>
+        <label for="cgpa">CGPA:</label>
+        <input type="text" id="cgpa" name="cgpa" required>
+        <br><br>
+        <label for="branch">Branch:</label>
+        <select id="branch" name="branch" required>
+            <option value="">Select Branch</option>
+            <option value="cse">CSE</option>
+            <option value="ece">ECE</option>
+            <option value="csd">CSD</option>
+            <option value="csm">CSM</option>
+            <option value="csc">CSC</option>
+        </select>
+        <br><br>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required>
         <br><br>
         <label for="age">Age:</label>
         <input type="number" id="age" name="age" required>
@@ -33,6 +56,8 @@
         <input type="text" id="grade" name="grade" required>
         <br><br>
         <input type="submit" value="Add Student">
+        <p id="student-message" aria-live="polite"></p>
     </form>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -9,13 +9,13 @@
 <body>
     <video autoplay muted loop id="bg-video">
     <source src="videos/bg.mp4" type="video/mp4">
-</video>
+    </video>
     <nav>    
         <a href="index.html">Home</a>
         <a href="login.html">Login</a>
         <a href="register.html">Register</a>        
     </nav>
-    <form action="dashboard.html">
+    <form id="login-form" action="dashboard.html">
         <h2>Login</h2>
         <label for="username">Username:</label>
         <br>
@@ -25,6 +25,8 @@
         <input type="password" id="password" name="password" required>
         <br><br>
         <input type="submit" id="login" value="Login">
+        <p id="login-message" aria-live="polite"></p>
     </form>
+    <script src="script.js"></script>
 </body>
 </html>
