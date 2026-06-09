@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - College Event Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-calendar-alt"></i> CollegeEvents
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="registration.html">Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header bg-primary text-white py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Event Registration</h1>
+            <p class="lead">Register for your favorite events</p>
+        </div>
+    </div>
+
+    <!-- Registration Form -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <!-- Success Alert (Hidden by default) -->
+                    <div id="successAlert" class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
+                        <h4 class="alert-heading">Registration Successful!</h4>
+                        <p id="successMessage"></p>
+                        <hr>
+                        <p class="mb-0">You will receive a confirmation email shortly with all event details.</p>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+
+                    <!-- Error Alert (Hidden by default) -->
+                    <div id="errorAlert" class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
+                        <h4 class="alert-heading">Registration Error</h4>
+                        <p id="errorMessage"></p>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+
+                    <div class="card shadow-lg">
+                        <div class="card-body p-5">
+                            <form id="registrationForm">
+                                <!-- Student Name -->
+                                <div class="mb-3">
+                                    <label for="studentName" class="form-label fw-bold">Student Name</label>
+                                    <input type="text" class="form-control" id="studentName" placeholder="Enter your full name" required>
+                                    <small class="form-text text-muted">First and Last name</small>
+                                </div>
+
+                                <!-- Roll Number -->
+                                <div class="mb-3">
+                                    <label for="rollNumber" class="form-label fw-bold">Roll Number</label>
+                                    <input type="text" class="form-control" id="rollNumber" placeholder="e.g., 21CS123" required>
+                                    <small class="form-text text-muted">Your unique student ID</small>
+                                </div>
+
+                                <!-- Branch -->
+                                <div class="mb-3">
+                                    <label for="branch" class="form-label fw-bold">Branch</label>
+                                    <select class="form-select" id="branch" required>
+                                        <option value="">-- Select Your Branch --</option>
+                                        <option value="CSE">Computer Science & Engineering</option>
+                                        <option value="ECE">Electronics & Communication</option>
+                                        <option value="ME">Mechanical Engineering</option>
+                                        <option value="CE">Civil Engineering</option>
+                                        <option value="EEE">Electrical & Electronics</option>
+                                        <option value="IT">Information Technology</option>
+                                    </select>
+                                </div>
+
+                                <!-- Email -->
+                                <div class="mb-3">
+                                    <label for="email" class="form-label fw-bold">Email Address</label>
+                                    <input type="email" class="form-control" id="email" placeholder="your.email@college.ac.in" required>
+                                    <small class="form-text text-muted">Use your college email if possible</small>
+                                </div>
+
+                                <!-- Mobile Number -->
+                                <div class="mb-3">
+                                    <label for="mobileNumber" class="form-label fw-bold">Mobile Number</label>
+                                    <input type="tel" class="form-control" id="mobileNumber" placeholder="+91 XXXXXXXXXX" required>
+                                    <small class="form-text text-muted">10 digit mobile number</small>
+                                </div>
+
+                                <!-- Event Selection -->
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold">Select Events</label>
+                                    <p class="text-muted small mb-2">You can select multiple events</p>
+                                    <div class="border p-3 rounded">
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="event1" name="events" value="Technical Quiz">
+                                            <label class="form-check-label" for="event1">
+                                                Technical Quiz - <small class="text-muted">March 15</small>
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="event2" name="events" value="Hackathon">
+                                            <label class="form-check-label" for="event2">
+                                                Hackathon - <small class="text-muted">March 20-21</small>
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="event3" name="events" value="Poster Presentation">
+                                            <label class="form-check-label" for="event3">
+                                                Poster Presentation - <small class="text-muted">March 22</small>
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="event4" name="events" value="Coding Contest">
+                                            <label class="form-check-label" for="event4">
+                                                Coding Contest - <small class="text-muted">March 25</small>
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="event5" name="events" value="Project Expo">
+                                            <label class="form-check-label" for="event5">
+                                                Project Expo - <small class="text-muted">March 28</small>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="event6" name="events" value="Cultural Fest">
+                                            <label class="form-check-label" for="event6">
+                                                Cultural Fest - <small class="text-muted">April 1-2</small>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <small class="form-text text-muted d-block mt-2">At least one event must be selected</small>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <button type="submit" class="btn btn-primary btn-lg w-100">Register Now</button>
+                                <a href="events.html" class="btn btn-outline-secondary btn-lg w-100 mt-2">View Events</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>About Us</h5>
+                    <p class="text-muted">Your go-to platform for all college events</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li><a href="faq.html" class="text-muted text-decoration-none">FAQ</a></li>
+                        <li><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Follow Us</h5>
+                    <a href="#" class="text-muted me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="#" class="text-muted me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-muted me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="text-muted"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+            <hr class="bg-secondary">
+            <p class="text-center text-muted mb-0">&copy; 2024 College Event Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

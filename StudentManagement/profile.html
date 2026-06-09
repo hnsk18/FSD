@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Student Profile</title>
 </head>
 <body>
@@ -15,11 +16,13 @@
         <a href="addstd.html">Add Student</a>
         <a href="viewstd.html">View Students</a>
         <a href="profile.html">Profile</a>
-        <a href="editstd.html">Edit Student</a>
         <a href="logout.html">Logout</a>
     </nav>
     <div id="profile-container" class="profile-card">
-        <h2>Student Profile</h2>
+        <span>
+            <button id="profile-back" style="border: 1px solid #ccc; border-radius: 30%; width: 40px; height: 40px;" onclick="window.location.href='/StudentManagement/viewstd.html'" type="button"><i class="fa-solid fa-angle-left" style="font-size: 25px;"></i></button>
+        </span>
+        <h2 style="margin-top: 0;">Student Profile</h2>
         <p><strong>Name:</strong> <span id="profile-name"></span></p>
         <p><strong>Roll Number:</strong> <span id="profile-roll"></span></p>
         <p><strong>CGPA:</strong> <span id="profile-cgpa"></span></p>
@@ -28,6 +31,7 @@
         <p><strong>Grade:</strong> <span id="profile-grade"></span></p>
         <p><strong>Created At:</strong> <span id="profile-created"></span></p>
         <div class="profile-actions">
+            
             <button id="profile-edit" type="button">Edit</button>
             <button id="profile-delete" type="button">Delete</button>
         </div>

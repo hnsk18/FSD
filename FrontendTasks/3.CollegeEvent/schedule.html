@@ -1,0 +1,210 @@
+<!-- remove css ND USE BOOTSTRAP CLASSES ONLY -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule - College Event Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+     
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-calendar-alt"></i> CollegeEvents
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registration.html">Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header bg-primary text-white py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Event Schedule</h1>
+            <p class="lead">Check event timings and venues</p>
+        </div>
+    </div>
+
+    <!-- Schedule Section -->
+    <section class="py-5">
+        <div class="container">
+            <!-- March Events -->
+            <div class="mb-5">
+                <h3 class="mb-4 text-primary fw-bold">
+                    <i class="fas fa-calendar-days"></i> March 2024
+                </h3>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover table-bordered">
+                        <thead class="table-primary">
+                            <tr>
+                                <th><i class="fas fa-clock"></i> Time</th>
+                                <th><i class="fas fa-calendar"></i> Date</th>
+                                <th><i class="fas fa-tag"></i> Event</th>
+                                <th><i class="fas fa-map-marker-alt"></i> Venue</th>
+                                <th><i class="fas fa-info-circle"></i> Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="fw-bold">10:00 AM - 12:00 PM</td>
+                                <td>March 15, 2024</td>
+                                <td>Technical Quiz</td>
+                                <td>Lab Block - Room 101</td>
+                                <td><span class="badge bg-info">Individual</span></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">9:00 AM - 9:00 AM (Next Day)</td>
+                                <td>March 20-21, 2024</td>
+                                <td>Hackathon 2024</td>
+                                <td>Computer Lab, Main Building</td>
+                                <td><span class="badge bg-success">24 Hours</span></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">2:00 PM - 5:00 PM</td>
+                                <td>March 22, 2024</td>
+                                <td>Poster Presentation</td>
+                                <td>Auditorium Hall</td>
+                                <td><span class="badge bg-warning">Team Event</span></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">11:00 AM - 3:00 PM</td>
+                                <td>March 25, 2024</td>
+                                <td>Coding Contest</td>
+                                <td>Computer Center</td>
+                                <td><span class="badge bg-danger">Competitive</span></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">10:00 AM - 6:00 PM</td>
+                                <td>March 28, 2024</td>
+                                <td>Project Expo</td>
+                                <td>Exhibition Ground</td>
+                                <td><span class="badge bg-secondary">Open for All</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- April Events -->
+            <div class="mb-5">
+                <h3 class="mb-4 text-primary fw-bold">
+                    <i class="fas fa-calendar-days"></i> April 2024
+                </h3>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover table-bordered">
+                        <thead class="table-primary">
+                            <tr>
+                                <th><i class="fas fa-clock"></i> Time</th>
+                                <th><i class="fas fa-calendar"></i> Date</th>
+                                <th><i class="fas fa-tag"></i> Event</th>
+                                <th><i class="fas fa-map-marker-alt"></i> Venue</th>
+                                <th><i class="fas fa-info-circle"></i> Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="fw-bold">6:00 PM - 10:00 PM</td>
+                                <td>April 1-2, 2024</td>
+                                <td>Cultural Fest</td>
+                                <td>Main Auditorium</td>
+                                <td><span class="badge bg-light text-dark">2 Days</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Legend -->
+            <div class="alert alert-light border-start border-5 border-primary">
+                <h5 class="mb-3"><i class="fas fa-question-circle"></i> Understanding the Schedule</h5>
+                <div class="row">
+                    <div class="col-md-3 mb-2">
+                        <span class="badge bg-info">Individual</span> - Single participant event
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        <span class="badge bg-success">24 Hours</span> - Long duration event
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        <span class="badge bg-warning">Team Event</span> - Multiple participants
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        <span class="badge bg-danger">Competitive</span> - Competition based
+                    </div>
+                </div>
+            </div>
+
+            <!-- Important Notes -->
+            <div class="alert alert-warning mt-4">
+                <h5 class="fw-bold"><i class="fas fa-exclamation-triangle"></i> Important Notes</h5>
+                <ul class="mb-0">
+                    <li>Please arrive 15 minutes before the scheduled time</li>
+                    <li>Bring your college ID card</li>
+                    <li>In case of any schedule change, you'll be notified via email</li>
+                    <li>For team events, ensure all members are present</li>
+                    <li>Check venue details carefully to avoid confusion</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>About Us</h5>
+                    <p class="text-muted">Your go-to platform for all college events</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li><a href="faq.html" class="text-muted text-decoration-none">FAQ</a></li>
+                        <li><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Follow Us</h5>
+                    <a href="#" class="text-muted me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="#" class="text-muted me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-muted me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="text-muted"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+            <hr class="bg-secondary">
+            <p class="text-center text-muted mb-0">&copy; 2024 College Event Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

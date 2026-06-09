@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - College Event Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-calendar-alt"></i> CollegeEvents
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registration.html">Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header bg-primary text-white py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Contact Us</h1>
+            <p class="lead">Get in touch with our event coordinators</p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Information -->
+                <div class="col-md-4 mb-5">
+                    <!-- Contact Details Card -->
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold mb-3">
+                                <i class="fas fa-info-circle text-primary me-2"></i> Contact Details
+                            </h5>
+                            <div class="mb-4">
+                                <h6 class="text-muted mb-2"><i class="fas fa-phone text-success me-2"></i> Phone</h6>
+                                <p class="ps-4 mb-0">+91-9876-543-210</p>
+                                <p class="ps-4">+91-9876-543-211</p>
+                            </div>
+                            <div class="mb-4">
+                                <h6 class="text-muted mb-2"><i class="fas fa-envelope text-danger me-2"></i> Email</h6>
+                                <p class="ps-4 mb-0">events@college.ac.in</p>
+                                <p class="ps-4">support@college.ac.in</p>
+                            </div>
+                            <div class="mb-4">
+                                <h6 class="text-muted mb-2"><i class="fas fa-map-marker-alt text-info me-2"></i> Office Location</h6>
+                                <p class="ps-4 mb-0">Student Activity Center</p>
+                                <p class="ps-4">Main Building, Ground Floor</p>
+                                <p class="ps-4">College Campus</p>
+                            </div>
+                            <div class="mb-0">
+                                <h6 class="text-muted mb-2"><i class="fas fa-clock text-warning me-2"></i> Working Hours</h6>
+                                <p class="ps-4 mb-1"><strong>Monday - Friday:</strong> 9:00 AM - 5:00 PM</p>
+                                <p class="ps-4"><strong>Saturday:</strong> 10:00 AM - 2:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coordinators Card -->
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold mb-3">
+                                <i class="fas fa-users text-primary me-2"></i> Event Coordinators
+                            </h5>
+                            
+                            <div class="mb-3 pb-3 border-bottom">
+                                <h6 class="mb-1">Dr. Rajesh Kumar</h6>
+                                <p class="text-muted mb-1 small">Head of Events</p>
+                                <p class="mb-0 small">
+                                    <i class="fas fa-envelope"></i> 
+                                    <a href="mailto:rajesh.kumar@college.ac.in" class="text-decoration-none">rajesh.kumar@college.ac.in</a>
+                                </p>
+                            </div>
+
+                            <div class="mb-3 pb-3 border-bottom">
+                                <h6 class="mb-1">Ms. Priya Singh</h6>
+                                <p class="text-muted mb-1 small">Coordinator - Technical Events</p>
+                                <p class="mb-0 small">
+                                    <i class="fas fa-envelope"></i> 
+                                    <a href="mailto:priya.singh@college.ac.in" class="text-decoration-none">priya.singh@college.ac.in</a>
+                                </p>
+                            </div>
+
+                            <div>
+                                <h6 class="mb-1">Mr. Arjun Patel</h6>
+                                <p class="text-muted mb-1 small">Coordinator - Cultural Events</p>
+                                <p class="mb-0 small">
+                                    <i class="fas fa-envelope"></i> 
+                                    <a href="mailto:arjun.patel@college.ac.in" class="text-decoration-none">arjun.patel@college.ac.in</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="col-md-8">
+                    <div class="card shadow-lg">
+                        <div class="card-body p-4">
+                            <h4 class="card-title fw-bold mb-4">Send us a Message</h4>
+                            
+                            <!-- Success Alert (Hidden by default) -->
+                            <div id="contactSuccessAlert" class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
+                                <h4 class="alert-heading">Message Sent Successfully!</h4>
+                                <p id="contactSuccessMessage"></p>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+
+                            <!-- Error Alert (Hidden by default) -->
+                            <div id="contactErrorAlert" class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
+                                <h4 class="alert-heading">Error</h4>
+                                <p id="contactErrorMessage"></p>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+
+                            <form id="contactForm">
+                                <!-- Name -->
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="contactName" class="form-label fw-bold">Your Name</label>
+                                        <input type="text" class="form-control" id="contactName" placeholder="Full name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="contactEmail" class="form-label fw-bold">Email Address</label>
+                                        <input type="email" class="form-control" id="contactEmail" placeholder="your.email@example.com" required>
+                                    </div>
+                                </div>
+
+                                <!-- Phone -->
+                                <div class="mb-3">
+                                    <label for="contactPhone" class="form-label fw-bold">Phone Number</label>
+                                    <input type="tel" class="form-control" id="contactPhone" placeholder="+91 XXXXXXXXXX" required>
+                                </div>
+
+                                <!-- Subject -->
+                                <div class="mb-3">
+                                    <label for="contactSubject" class="form-label fw-bold">Subject</label>
+                                    <select class="form-select" id="contactSubject" required>
+                                        <option value="">-- Select Subject --</option>
+                                        <option value="Event Inquiry">Event Inquiry</option>
+                                        <option value="Registration Issue">Registration Issue</option>
+                                        <option value="Technical Support">Technical Support</option>
+                                        <option value="Feedback">Feedback</option>
+                                        <option value="Suggestion">Suggestion</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+
+                                <!-- Message -->
+                                <div class="mb-3">
+                                    <label for="contactMessage" class="form-label fw-bold">Message</label>
+                                    <textarea class="form-control" id="contactMessage" rows="6" placeholder="Type your message here..." required></textarea>
+                                    <small class="form-text text-muted">Maximum 500 characters</small>
+                                </div>
+
+                                <!-- Checkbox -->
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="checkbox" id="contactCheckbox" required>
+                                    <label class="form-check-label" for="contactCheckbox">
+                                        I agree to the terms and conditions
+                                    </label>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <button type="submit" class="btn btn-primary btn-lg w-100">Send Message</button>
+                                <button type="reset" class="btn btn-outline-secondary btn-lg w-100 mt-2">Clear Form</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Media Section -->
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <div class="card bg-light border-0">
+                        <div class="card-body text-center py-5">
+                            <h4 class="fw-bold mb-4">Follow Us on Social Media</h4>
+                            <div>
+                                <a href="#" class="btn btn-primary btn-lg me-3">
+                                    <i class="fab fa-facebook-f"></i> Facebook
+                                </a>
+                                <a href="#" class="btn btn-info btn-lg me-3">
+                                    <i class="fab fa-twitter"></i> Twitter
+                                </a>
+                                <a href="#" class="btn btn-danger btn-lg me-3">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </a>
+                                <a href="#" class="btn btn-secondary btn-lg">
+                                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h3 class="text-center fw-bold mb-4">Find Us on Campus</h3>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card shadow-sm">
+                        <div class="card-body p-0">
+                            <div class="ratio ratio-16x9">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5896471646306!2d77.59!3d12.97!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d5c5c5c5c5d%3A0x5c5c5c5c5c5c5c5c!2sStudent%20Activity%20Center!5e0!3m2!1sen!2sin!4v1234567890" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>About Us</h5>
+                    <p class="text-muted">Your go-to platform for all college events</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li><a href="faq.html" class="text-muted text-decoration-none">FAQ</a></li>
+                        <li><a href="events.html" class="text-muted text-decoration-none">Events</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Follow Us</h5>
+                    <a href="#" class="text-muted me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="#" class="text-muted me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-muted me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="text-muted"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+            <hr class="bg-secondary">
+            <p class="text-center text-muted mb-0">&copy; 2024 College Event Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

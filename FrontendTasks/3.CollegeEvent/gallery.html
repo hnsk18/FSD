@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - College Event Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-calendar-alt"></i> CollegeEvents
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registration.html">Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header bg-primary text-white py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Event Gallery</h1>
+            <p class="lead">Memories from our past events</p>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section class="py-5">
+        <div class="container">
+            <!-- Filter Buttons -->
+            <div class="row mb-5">
+                <div class="col-md-12">
+                    <div class="text-center mb-4">
+                        <button type="button" class="btn btn-outline-primary me-2 mb-2 gallery-filter" data-filter="all">All</button>
+                        <button type="button" class="btn btn-outline-primary me-2 mb-2 gallery-filter" data-filter="technical">Technical</button>
+                        <button type="button" class="btn btn-outline-primary me-2 mb-2 gallery-filter" data-filter="cultural">Cultural</button>
+                        <button type="button" class="btn btn-outline-primary mb-2 gallery-filter" data-filter="general">General</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="row g-3">
+                <!-- Image 1 -->
+                <div class="col-md-6 col-lg-4 gallery-item" data-category="technical">
+                    <div class="card gallery-card overflow-hidden shadow-sm">
+                        <div class="gallery-img-placeholder bg-primary h-250">
+                            <div class="d-flex align-items-center justify-content-center h-100 text-white">
+                                <div class="text-center">
+                                    <i class="fas fa-code fa-5x mb-3"></i>
+                                    <p class="fw-bold">Hackathon 2023</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Hackathon Event</h5>
+                            <p class="card-text text-muted">Teams competing and coding together</p>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setImageData('Hackathon Event', 'Participants showing their innovative projects')">
+                                <i class="fas fa-expand"></i> View Full
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 2 -->
+                <div class="col-md-6 col-lg-4 gallery-item" data-category="technical">
+                    <div class="card gallery-card overflow-hidden shadow-sm">
+                        <div class="gallery-img-placeholder bg-success h-250">
+                            <div class="d-flex align-items-center justify-content-center h-100 text-white">
+                                <div class="text-center">
+                                    <i class="fas fa-brain fa-5x mb-3"></i>
+                                    <p class="fw-bold">Quiz Competition</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Technical Quiz</h5>
+                            <p class="card-text text-muted">Students answering technical questions</p>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setImageData('Technical Quiz', 'Participants concentrating on their answers')">
+                                <i class="fas fa-expand"></i> View Full
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 3 -->
+                <div class="col-md-6 col-lg-4 gallery-item" data-category="technical">
+                    <div class="card gallery-card overflow-hidden shadow-sm">
+                        <div class="gallery-img-placeholder bg-info h-250">
+                            <div class="d-flex align-items-center justify-content-center h-100 text-white">
+                                <div class="text-center">
+                                    <i class="fas fa-cube fa-5x mb-3"></i>
+                                    <p class="fw-bold">Project Expo</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Project Expo Showcase</h5>
+                            <p class="card-text text-muted">Students presenting their final year projects</p>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setImageData('Project Expo', 'Project demos and presentations in action')">
+                                <i class="fas fa-expand"></i> View Full
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 4 -->
+                <div class="col-md-6 col-lg-4 gallery-item" data-category="cultural">
+                    <div class="card gallery-card overflow-hidden shadow-sm">
+                        <div class="gallery-img-placeholder bg-danger h-250">
+                            <div class="d-flex align-items-center justify-content-center h-100 text-white">
+                                <div class="text-center">
+                                    <i class="fas fa-guitar fa-5x mb-3"></i>
+                                    <p class="fw-bold">Music Performance</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Cultural Fest - Music</h5>
+                            <p class="card-text text-muted">Students performing melodious songs</p>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setImageData('Music Performance', 'Live music performance at cultural fest')">
+                                <i class="fas fa-expand"></i> View Full
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 5 -->
+                <div class="col-md-6 col-lg-4 gallery-item" data-category="cultural">
+                    <div class="card gallery-card overflow-hidden shadow-sm">
+                        <div class="gallery-img-placeholder bg-warning h-250">
+                            <div class="d-flex align-items-center justify-content-center h-100 text-white">
+                                <div class="text-center">
+                                    <i class="fas fa-theater-masks fa-5x mb-3"></i>
+                                    <p class="fw-bold">Dance Performance</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Cultural Fest - Dance</h5>
+                            <p class="card-text text-muted">Amazing dance performances from different groups</p>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setImageData('Dance Performance', 'Traditional and contemporary dance performances')">
+                                <i class="fas fa-expand"></i> View Full
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 6 -->
+                <div class="col-md-6 col-lg-4 gallery-item" data-category="general">
+                    <div class="card gallery-card overflow-hidden shadow-sm">
+                        <div class="gallery-img-placeholder bg-secondary h-250">
+                            <div class="d-flex align-items-center justify-content-center h-100 text-white">
+                                <div class="text-center">
+                                    <i class="fas fa-users fa-5x mb-3"></i>
+                                    <p class="fw-bold">Group Photo</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Team Moments</h5>
+                            <p class="card-text text-muted">Memorable moments with fellow students</p>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setImageData('Team Moments', 'Group photo of all participants')">
+                                <i class="fas fa-expand"></i> View Full
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 7 -->
+                <div class="col-md-6 col-lg-4 gallery-item" data-category="general">
+                    <div class="card gallery-card overflow-hidden shadow-sm">
+                        <div class="gallery-img-placeholder bg-primary h-250">
+                            <div class="d-flex align-items-center justify-content-center h-100 text-white">
+                                <div class="text-center">
+                                    <i class="fas fa-award fa-5x mb-3"></i>
+                                    <p class="fw-bold">Award Ceremony</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Prize Distribution</h5>
+                            <p class="card-text text-muted">Winners receiving awards and recognition</p>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setImageData('Award Ceremony', 'Prize distribution and certificate ceremony')">
+                                <i class="fas fa-expand"></i> View Full
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 8 -->
+                <div class="col-md-6 col-lg-4 gallery-item" data-category="general">
+                    <div class="card gallery-card overflow-hidden shadow-sm">
+                        <div class="gallery-img-placeholder bg-info h-250">
+                            <div class="d-flex align-items-center justify-content-center h-100 text-white">
+                                <div class="text-center">
+                                    <i class="fas fa-images fa-5x mb-3"></i>
+                                    <p class="fw-bold">Campus Life</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Campus Moments</h5>
+                            <p class="card-text text-muted">Candid moments from various events</p>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setImageData('Campus Moments', 'Candid shots from campus activities')">
+                                <i class="fas fa-expand"></i> View Full
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 9 -->
+                <div class="col-md-6 col-lg-4 gallery-item" data-category="technical">
+                    <div class="card gallery-card overflow-hidden shadow-sm">
+                        <div class="gallery-img-placeholder bg-success h-250">
+                            <div class="d-flex align-items-center justify-content-center h-100 text-white">
+                                <div class="text-center">
+                                    <i class="fas fa-chart-bar fa-5x mb-3"></i>
+                                    <p class="fw-bold">Poster Session</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Poster Presentations</h5>
+                            <p class="card-text text-muted">Students presenting their research posters</p>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setImageData('Poster Presentations', 'Research posters displayed and explained')">
+                                <i class="fas fa-expand"></i> View Full
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Image Title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="modal-img-placeholder bg-light p-5 rounded">
+                        <i class="fas fa-image fa-5x text-muted mb-3"></i>
+                        <p class="text-muted" id="modalDescription">Image description</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>About Us</h5>
+                    <p class="text-muted">Your go-to platform for all college events</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li><a href="faq.html" class="text-muted text-decoration-none">FAQ</a></li>
+                        <li><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Follow Us</h5>
+                    <a href="#" class="text-muted me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="#" class="text-muted me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-muted me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="text-muted"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+            <hr class="bg-secondary">
+            <p class="text-center text-muted mb-0">&copy; 2024 College Event Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

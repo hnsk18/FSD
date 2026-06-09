@@ -98,17 +98,31 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+
     migrateStudentData();
 
     function requireLogin() {
-        const restrictedPages = ['dashboard.html', 'addstd.html', 'viewstd.html', 'editstd.html', 'logout.html', 'profile.html'];
-        if (!restrictedPages.includes(currentPage)) {
+        const protectedPages = ['dashboard.html', 'addstd.html', 'viewstd.html', 'editstd.html', 'profile.html'];
+        const authPages = ['login.html', 'register.html'];
+        const loggedInUser = getLoggedInUser();
+
+        if (currentPage === 'logout.html') {
+            localStorage.removeItem('loggedInUser');
             return true;
         }
 
-        if (!getLoggedInUser()) {
-            alert('Please log in to access this page.');
-            window.location.href = 'login.html';
+        if (protectedPages.includes(currentPage)) {
+            if (!loggedInUser) {
+                alert('Please log in to access this page.');
+                window.location.href = 'login.html';
+                return false;
+            }
+            return true;
+        }
+
+        if (authPages.includes(currentPage) && loggedInUser) {
+            alert('You are already logged in.');
+            window.location.href = 'dashboard.html';
             return false;
         }
 
@@ -208,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (e.target.closest('button')) {
                 return;
             }
-            window.open(`profile.html?id=${row.dataset.id}`, '_blank', 'noopener,noreferrer');
+            window.location.href = `profile.html?id=${row.dataset.id}`;
         });
     }
 
